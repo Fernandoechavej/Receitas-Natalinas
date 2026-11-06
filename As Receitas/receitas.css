@@ -1,0 +1,102 @@
+body{
+    color: white;
+}
+/*vvvvFundo Lindo de Natalvvvv*/
+html {
+  --s: 75px; /* control the size */
+  
+  --_c:#0000,#222222 1deg 79deg,#0000 81deg;
+  --g0:conic-gradient(from 140deg at 50% 87.5% ,var(--_c));
+  --g1:conic-gradient(from 140deg at 50% 81.25%,var(--_c));
+  --g2:conic-gradient(from 140deg at 50% 75%   ,var(--_c));
+  --g3:conic-gradient(at 10% 20%,#0000 75%,#222222 0);
+  background:
+    var(--g0) 0 calc(var(--s)/-4),var(--g0) var(--s) calc(3*var(--s)/4),
+    var(--g1) ,var(--g1) var(--s) var(--s),
+    var(--g2) 0 calc(var(--s)/ 4),var(--g2) var(--s) calc(5*var(--s)/4),
+    var(--g3) calc( var(--s)/-10) var(--s),
+    var(--g3) calc(9*var(--s)/10) calc(2*var(--s)),
+    repeating-conic-gradient(from 45deg,#180408 0 25%,#0d1603 0 50%);
+  background-size: calc(2*var(--s)) calc(2*var(--s));
+}
+/*^^^^Fundo Lindo de Natal^^^^*/
+
+/*vvvv Borda Bonitinha pra Direita vvvv*/
+.borda-D{
+    float: right;
+    right: 90px;
+    margin: 90px;
+    padding: 20px;
+    text-align: right;
+    flex-direction: row;
+    /* borda */
+    border-top: 15px ridge #030b04;
+    border-right: 15px groove #030b04;
+    border-bottom: 15px groove #030b04;
+    border-left: 15px ridge #030b04;
+    border-radius: 40px;
+
+    /* O fundo em ondas */
+    --s: 40px;
+    --c1: #131313;
+    --c2: #0f0203;
+    --c3: #010704;
+    --b: calc(var(--s)/2.67);
+    --_r: calc(1.28*var(--s) + var(--b)/2) at left 50%;
+    --_f: calc(100% - var(--b)),var(--c1) calc(101% - var(--b)) 100%,#0000 101%;
+    --g0: calc(-.8*var(--s)),var(--c2) var(--_f);
+    --g1: calc(-.8*var(--s)),var(--c3) var(--_f);
+    --_s: calc(1.5*var(--s) + var(--b));
+    background: 
+        radial-gradient(var(--_r) bottom var(--g0)) calc(2*var(--s)) calc(-1*var(--_s)),
+        radial-gradient(var(--_r) bottom var(--g1)) calc(-1*var(--s)) calc(var(--_s)/-2),
+        radial-gradient(var(--_r) top    var(--g1)) 0 var(--_s),
+        radial-gradient(var(--_r) top    var(--g0)) var(--s) calc(var(--_s)/ 2),
+        linear-gradient(var(--c2) 50%,var(--c3) 0);
+    background-size: calc(4*var(--s)) var(--_s);
+}
+/*^^^^ Borda Bonitinha pra Direita (use Class="borda-D") ^^^^*/
+
+/*vvvv Borda Bonitinha pra Esquerda vvvv*/
+.borda-E{
+    float: left;
+    left: 90px;
+    margin: 90px;
+    padding: 20px;
+    text-align: left;
+    flex-direction: row-reverse;
+    /* borda */
+    border-top: 15px ridge #030b04;
+    border-right: 15px groove #030b04;
+    border-bottom: 15px groove #030b04;
+    border-left: 15px ridge #030b04;
+    border-radius: 40px;
+
+    /* O fundo em ondas */
+    --s: 40px;
+    --c1: #010704;
+    --c2: #0f0203;
+    --c3: #131313;
+    --b: calc(var(--s)/2.67);
+    --_r: calc(1.28*var(--s) + var(--b)/2) at left 50%;
+    --_f: calc(100% - var(--b)),var(--c1) calc(101% - var(--b)) 100%,#0000 101%;
+    --g0: calc(-.8*var(--s)),var(--c2) var(--_f);
+    --g1: calc(-.8*var(--s)),var(--c3) var(--_f);
+    --_s: calc(1.5*var(--s) + var(--b));
+    background: 
+        radial-gradient(var(--_r) bottom var(--g0)) calc(2*var(--s)) calc(-1*var(--_s)),
+        radial-gradient(var(--_r) bottom var(--g1)) calc(-1*var(--s)) calc(var(--_s)/-2),
+        radial-gradient(var(--_r) top    var(--g1)) 0 var(--_s),
+        radial-gradient(var(--_r) top    var(--g0)) var(--s) calc(var(--_s)/ 2),
+        linear-gradient(var(--c2) 50%,var(--c3) 0);
+    background-size: calc(4*var(--s)) var(--_s);
+}
+/*^^^^ Borda Bonitinha pra Esquerda (use Class="borda-E")  ^^^^*/
+
+/*Organizar no Mobile*/
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+    body{
+      display: flexbox;
+      overflow-wrap: anywhere;
+    }}
+/*Organizar no Mobile*/
