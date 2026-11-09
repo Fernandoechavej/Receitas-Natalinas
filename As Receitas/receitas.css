@@ -4,7 +4,7 @@ body{
 /*vvvvFundo Lindo de Natalvvvv*/
 html {
   --s: 75px; /* control the size */
-  
+
   --_c:#0000,#222222 1deg 79deg,#0000 81deg;
   --g0:conic-gradient(from 140deg at 50% 87.5% ,var(--_c));
   --g1:conic-gradient(from 140deg at 50% 81.25%,var(--_c));
@@ -24,10 +24,12 @@ html {
 /*vvvv Borda Bonitinha pra Direita vvvv*/
 .borda-D{
     float: right;
-    right: 90px;
-    margin: 90px;
+    box-sizing: border-box;
+    width: 50%;
+    margin: 10px;
     padding: 20px;
-    text-align: right;
+    align-items: center;
+    text-align: center;
     flex-direction: row;
     /* borda */
     border-top: 15px ridge #030b04;
@@ -56,14 +58,33 @@ html {
     background-size: calc(4*var(--s)) var(--_s);
 }
 /*^^^^ Borda Bonitinha pra Direita (use Class="borda-D") ^^^^*/
+/*vvvv Mobile Bonito PT2 vvvv*/
+@media screen and (max-width: 599px) {
+
+    .borda-D {
+        float: none;
+        width: calc(100% - 40px);
+        margin: 20px 20px 20px auto;
+    }
+
+
+    .borda-E {
+        float: none;
+        width: calc(100% - 40px);
+        margin: 20px 20px 20px auto;
+    }
+}
+/*^^^^ Mobile Bonito PT2 ^^^^*/
 
 /*vvvv Borda Bonitinha pra Esquerda vvvv*/
 .borda-E{
     float: left;
-    left: 90px;
-    margin: 90px;
+    box-sizing: border-box;
+    width: 50%;
+    margin: 10px;
     padding: 20px;
-    text-align: left;
+    align-items: center;
+    text-align: center;
     flex-direction: row-reverse;
     /* borda */
     border-top: 15px ridge #030b04;
@@ -93,6 +114,71 @@ html {
 }
 /*^^^^ Borda Bonitinha pra Esquerda (use Class="borda-E")  ^^^^*/
 
+div.borda-D,
+div.borda-E {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    box-sizing: border-box;
+    width: auto;
+    margin: 20px 90px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+}
+
+div.borda-D {
+    float: none;
+}
+
+div.borda-E {
+    float: none;
+    flex-direction: row-reverse;
+}
+
+div.borda-D > img,
+div.borda-E > img {
+    box-sizing: border-box;
+    display: block;
+    flex: 1 1 50%;
+    width: 50%;
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto;
+    border-top: 15px ridge #030b04;
+    border-right: 15px groove #030b04;
+    border-bottom: 15px groove #030b04;
+    border-left: 15px ridge #030b04;
+    border-radius: 40px;
+}
+
+div.borda-D > p,
+div.borda-E > p {
+    flex: 1 1 0;
+    float: none;
+    width: auto;
+    margin: 20px 0;
+}
+
+@media screen and (max-width: 599px) {
+    div.borda-D,
+    div.borda-E {
+        flex-direction: column;
+        margin: 20px;
+    }
+
+    div.borda-D > img,
+    div.borda-E > img {
+        width: 100%;
+    }
+
+    div.borda-D > p,
+    div.borda-E > p {
+        width: 100%;
+    }
+}
+
 /*Organizar no Mobile*/
 @media screen and (min-width: 600px) and (max-width: 1024px) {
     body{
@@ -100,3 +186,46 @@ html {
       overflow-wrap: anywhere;
     }}
 /*Organizar no Mobile*/
+
+.borda{
+    box-sizing: border-box;
+    width: 50%;
+    margin: 10px;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+    /* borda */
+    border-top: 15px ridge #030b04;
+    border-right: 15px groove #030b04;
+    border-bottom: 15px groove #030b04;
+    border-left: 15px ridge #030b04;
+    border-radius: 40px;
+
+    /* O fundo em ondas */
+    --s: 40px;
+    --c1: #010704;
+    --c2: #0f0203;
+    --c3: #131313;
+    --b: calc(var(--s)/2.67);
+    --_r: calc(1.28*var(--s) + var(--b)/2) at left 50%;
+    --_f: calc(100% - var(--b)),var(--c1) calc(101% - var(--b)) 100%,#0000 101%;
+    --g0: calc(-.8*var(--s)),var(--c2) var(--_f);
+    --g1: calc(-.8*var(--s)),var(--c3) var(--_f);
+    --_s: calc(1.5*var(--s) + var(--b));
+    background: 
+        radial-gradient(var(--_r) bottom var(--g0)) calc(2*var(--s)) calc(-1*var(--_s)),
+        radial-gradient(var(--_r) bottom var(--g1)) calc(-1*var(--s)) calc(var(--_s)/-2),
+        radial-gradient(var(--_r) top    var(--g1)) 0 var(--_s),
+        radial-gradient(var(--_r) top    var(--g0)) var(--s) calc(var(--_s)/ 2),
+        linear-gradient(var(--c2) 50%,var(--c3) 0);
+    background-size: calc(4*var(--s)) var(--_s);
+}
+
+#Esq{
+align-items: left;
+margin-left: 50%;
+}
+#Dir{
+    align-items: right;
+    margin-right: 50%;
+}
